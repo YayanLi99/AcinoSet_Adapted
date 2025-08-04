@@ -10,7 +10,7 @@ dependencies:
   - numpy
   - scipy
   - sympy
-  - opencv
+  - opencv-python
   - pandas
   - pyopengl
   - jupyterlab
