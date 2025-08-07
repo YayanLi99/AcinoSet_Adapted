@@ -294,6 +294,7 @@ class Cheetah(Animation):
 
 
 def plot_extrinsics(scene_fpath, pts_2d, fnames, triangulate_func, manual_points_only=False, **kwargs):
+    # world frame definition
     scene = Scene(scene_fpath, **kwargs)
 
     colors = [[1,0,0],                        # red: cam pair 0&1

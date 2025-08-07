@@ -2,6 +2,7 @@ import cv2 as cv
 import numpy as np
 from nptyping import Array
 from typing import Tuple, List, Union
+import os
 
 
 def plot_corners(img: Array[np.uint8, ..., ..., 3], corners: Array[np.float32, ..., ..., 2], board_shape: Tuple[int, int], show_window=False):

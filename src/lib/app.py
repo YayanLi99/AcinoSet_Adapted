@@ -40,16 +40,16 @@ def extract_corners_from_images(img_dir, out_fpath, board_shape, board_edge_len,
 def calibrate_standard_intrinsics(points_fpath, out_fpath):
     points, fnames, board_shape, board_edge_len, cam_res = load_points(points_fpath)
     obj_pts = create_board_object_pts(board_shape, board_edge_len)
-    k, d, r, t = calibrate_camera(obj_pts, points, cam_res)
+    rms,k, d, r, t = calibrate_camera(obj_pts, points, cam_res)
     print("K:\n", k, "\nD:\n", d)
     save_camera(out_fpath, cam_res, k, d)
-    return k, d, r, t, points
+    return rms,k, d, r, t, points
 
 
 def calibrate_fisheye_intrinsics(points_fpath, out_fpath):
     points, fnames, board_shape, board_edge_len, cam_res = load_points(points_fpath)
     obj_pts = create_board_object_pts(board_shape, board_edge_len)
-    k, d, r, t, used_points, rms = calibrate_fisheye_camera(obj_pts, points, cam_res)
+    k,d, r, t, used_points, rms = calibrate_fisheye_camera(obj_pts, points, cam_res)
     print("K:\n", k, "\nD:\n", d)
     save_camera(out_fpath, cam_res, k, d)
     return k, d, r, t, used_points, rms

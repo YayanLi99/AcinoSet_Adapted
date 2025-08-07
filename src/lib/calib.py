@@ -19,7 +19,7 @@ def calibrate_camera(obj_pts: Array[np.float32, ..., 3], img_pts: Array[np.float
     flags = cv.CALIB_RATIONAL_MODEL + cv.CALIB_FIX_PRINCIPAL_POINT
     ret, k, d, r, t = cv.calibrateCamera(obj_pts, img_pts, cam_res, None, None, flags=flags)
     if ret:
-        return k, d, r, t
+        return ret, k, d, r, t
     return None
 
 
@@ -112,7 +112,7 @@ def calibrate_pair_extrinsics_fisheye(obj_pts, img_pts_1, img_pts_2, k1, d1, k2,
     obj_pts = np.repeat(obj_pts[np.newaxis, :, :], img_pts_1.shape[0], axis=0).reshape((img_pts_1.shape[0], 1, -1, 3))
     img_pts_1 = img_pts_1.reshape((img_pts_1.shape[0], 1, img_pts_1.shape[1]*img_pts_1.shape[2], 2))
     img_pts_2 = img_pts_2.reshape((img_pts_2.shape[0], 1, img_pts_2.shape[1]*img_pts_2.shape[2], 2))
-    rms, *_, r, t = cv.fisheye.stereoCalibrate(obj_pts, img_pts_1, img_pts_2, k1, d1, k2, d2, cam_res,
+    rms, _,_,_,_, r, t = cv.fisheye.stereoCalibrate(obj_pts, img_pts_1, img_pts_2, k1, d1, k2, d2, cam_res,
                                                 flags=flags, criteria=term_crit)
     return rms, r, t
 
