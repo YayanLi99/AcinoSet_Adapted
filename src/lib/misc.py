@@ -4,24 +4,37 @@ import sympy as sp
 
 
 def get_markers():
-    return ['nose', 'l_eye', 'r_eye', 'neck_base', 
-            'spine', 'tail_base', 'tail1', 'tail2',
-            'r_shoulder', 'r_front_knee', 'r_front_ankle', #'r_front_paw',
-            'l_shoulder', 'l_front_knee', 'l_front_ankle', #'l_front_paw',
-            'r_hip', 'r_back_knee', 'r_back_ankle', #'r_back_paw',
-            'l_hip', 'l_back_knee', 'l_back_ankle', #'l_back_paw',
-#             'lure'
+    return ['eye_L', 'eye_R', 'coxa_F1', 'merus_F1', 'carpus_F1', 'manus_F1', 'dactyl_F1',
+                'coxa_F2', 'merus_F2', 'carpus_F2', 'manus_F2', 'dactyl_F2',
+                'coxa_L1', 'merus_L1', 'carpus_L1', 'manus_L1', 'dactyl_L1',
+                'coxa_L2', 'merus_L2', 'carpus_L2', 'manus_L2', 'dactyl_L2',
+                'coxa_L3', 'merus_L3', 'carpus_L3', 'manus_L3', 'dactyl_L3',
+                'coxa_L4', 'merus_L4', 'carpus_L4', 'manus_L4', 'dactyl_L4',
+                'coxa_R1', 'merus_R1', 'carpus_R1', 'manus_R1', 'dactyl_R1',
+                'coxa_R2', 'merus_R2', 'carpus_R2', 'manus_R2', 'dactyl_R2',
+                'coxa_R3', 'merus_R3', 'carpus_R3', 'manus_R3', 'dactyl_R3',
+                'coxa_R4', 'merus_R4', 'carpus_R4', 'manus_R4', 'dactyl_R4'
            ] # excludes paws & lure for now!
 
 
 def get_skeleton():
-    return [['nose', 'l_eye'], ['nose', 'r_eye'], ['nose', 'neck_base'], ['l_eye', 'neck_base'], ['r_eye', 'neck_base'], 
-            ['neck_base', 'spine'], ['spine', 'tail_base'], ['tail_base', 'tail1'], ['tail1', 'tail2'],
-            ['neck_base', 'r_shoulder'], ['r_shoulder', 'r_front_knee'], ['r_front_knee', 'r_front_ankle'], #['r_front_ankle', 'r_front_paw'], 
-            ['neck_base', 'l_shoulder'], ['l_shoulder', 'l_front_knee'], ['l_front_knee', 'l_front_ankle'], #['l_front_ankle', 'l_front_paw'], 
-            ['tail_base', 'r_hip'], ['r_hip', 'r_back_knee'], ['r_back_knee', 'r_back_ankle'], #['r_back_ankle', 'r_back_paw'],
-            ['tail_base', 'l_hip'], ['l_hip', 'l_back_knee'], ['l_back_knee', 'l_back_ankle'], #['l_back_ankle', 'l_back_paw']
+    return [
+        
+            # ['eye_L', 'coxa_F1'], ['eye_R', 'coxa_F2'],['coxa_F1','coxa_F2'],['coxa_F1', 'merus_F1'],['merus_F1', 'carpus_F1'],['carpus_F1', 'manus_F1']
+            # ['manus_F1', 'dactyl_F1'],['coxa_F2', 'merus_F2'],['merus_F2', 'carpus_F2'],['carpus_F2', 'manus_F2']
+            # ['manus_F2', 'dactyl_F2'],['coxa_L1', 'merus_L1'],['merus_L1', 'carpus_L1'],['carpus_L1', 'manus_L1']
+            # ['manus_L1', 'dactyl_L1'],['coxa_L2', 'merus_L2'],['merus_L2', 'carpus_L2'],['carpus_L2', 'manus_L2']
+            # ['manus_L2', 'dactyl_L2'],['coxa_L3', 'merus_L3'],['merus_L3', 'carpus_L3'],['carpus_L3', 'manus_L3']
+            # ['manus_L3', 'dactyl_L3'],['coxa_L4', 'merus_L4'],['merus_L4', 'carpus_L4'],['carpus_L4', 'manus_L4']
+            # ['manus_L4', 'dactyl_L4'],['coxa_R1', 'merus_R1'],['merus_R1', 'carpus_R1'],['carpus_R1', 'manus_R1']
+            # ['manus_R1', 'dactyl_R1'],['coxa_R2', 'merus_R2'],['merus_R2', 'carpus_R2'],['carpus_R2', 'manus_R2']
+            # ['manus_R2', 'dactyl_R2'],['coxa_R3', 'merus_R3'],['merus_R3', 'carpus_R3'],['carpus_R3', 'manus_R3']
+            # ['manus_R3', 'dactyl_R3'],['coxa_R4', 'merus_R4'],['merus_R4', 'carpus_R4'],['carpus_R4', 'manus_R4']
+            # ['manus_R4', 'dactyl_R4']
+
            ] # exludes paws for now!
+
+
 
 
 def get_pose_params():
