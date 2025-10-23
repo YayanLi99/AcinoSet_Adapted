@@ -4,8 +4,7 @@ import sympy as sp
 
 
 def get_markers():
-    return ['eye_L', 'eye_R', 'coxa_F1', 'merus_F1', 'carpus_F1', 'manus_F1', 'dactyl_F1',
-                'coxa_F2', 'merus_F2', 'carpus_F2', 'manus_F2', 'dactyl_F2',
+    return ['eye_L', 'eye_R', 'body',
                 'coxa_L1', 'merus_L1', 'carpus_L1', 'manus_L1', 'dactyl_L1',
                 'coxa_L2', 'merus_L2', 'carpus_L2', 'manus_L2', 'dactyl_L2',
                 'coxa_L3', 'merus_L3', 'carpus_L3', 'manus_L3', 'dactyl_L3',
@@ -19,19 +18,17 @@ def get_markers():
 
 def get_skeleton():
     return [
-        
-            # ['eye_L', 'coxa_F1'], ['eye_R', 'coxa_F2'],['coxa_F1','coxa_F2'],['coxa_F1', 'merus_F1'],['merus_F1', 'carpus_F1'],['carpus_F1', 'manus_F1']
-            # ['manus_F1', 'dactyl_F1'],['coxa_F2', 'merus_F2'],['merus_F2', 'carpus_F2'],['carpus_F2', 'manus_F2']
-            # ['manus_F2', 'dactyl_F2'],['coxa_L1', 'merus_L1'],['merus_L1', 'carpus_L1'],['carpus_L1', 'manus_L1']
-            # ['manus_L1', 'dactyl_L1'],['coxa_L2', 'merus_L2'],['merus_L2', 'carpus_L2'],['carpus_L2', 'manus_L2']
-            # ['manus_L2', 'dactyl_L2'],['coxa_L3', 'merus_L3'],['merus_L3', 'carpus_L3'],['carpus_L3', 'manus_L3']
-            # ['manus_L3', 'dactyl_L3'],['coxa_L4', 'merus_L4'],['merus_L4', 'carpus_L4'],['carpus_L4', 'manus_L4']
-            # ['manus_L4', 'dactyl_L4'],['coxa_R1', 'merus_R1'],['merus_R1', 'carpus_R1'],['carpus_R1', 'manus_R1']
-            # ['manus_R1', 'dactyl_R1'],['coxa_R2', 'merus_R2'],['merus_R2', 'carpus_R2'],['carpus_R2', 'manus_R2']
-            # ['manus_R2', 'dactyl_R2'],['coxa_R3', 'merus_R3'],['merus_R3', 'carpus_R3'],['carpus_R3', 'manus_R3']
-            # ['manus_R3', 'dactyl_R3'],['coxa_R4', 'merus_R4'],['merus_R4', 'carpus_R4'],['carpus_R4', 'manus_R4']
-            # ['manus_R4', 'dactyl_R4']
-
+            ['eye_L', 'eye_R'], ['eye_L', 'body'],['ceye_R','body'],
+            ['body', 'coxa_L1'],['body', 'coxa_L2'],['body', 'coxa_L3'],['body', 'coxa_L4'],
+            ['body', 'coxa_R1'],['body', 'coxa_R2'],['body', 'coxa_R3'],['body', 'coxa_R4'],
+            ['coxa_L1', 'merus_L1'],['merus_L1', 'carpus_L1'],['carpus_L1', 'manus_L1'],['manus_L1', 'dactyl_L1'],
+            ['coxa_L2', 'merus_L2'],['merus_L2', 'carpus_L2'],['carpus_L2', 'manus_L2'],['manus_L2', 'dactyl_L2'],
+            ['coxa_L3', 'merus_L3'],['merus_L3', 'carpus_L3'],['carpus_L3', 'manus_L3'],['manus_L3', 'dactyl_L3'],
+            ['coxa_L4', 'merus_L4'],['merus_L4', 'carpus_L4'],['carpus_L4', 'manus_L4'],['manus_L4', 'dactyl_L4'],
+            ['coxa_R1', 'merus_R1'],['merus_R1', 'carpus_R1'],['carpus_R1', 'manus_R1'],['manus_R1', 'dactyl_R1'],
+            ['coxa_R2', 'merus_R2'],['merus_R2', 'carpus_R2'],['carpus_R2', 'manus_R2'],['manus_R2', 'dactyl_R2'],
+            ['coxa_R3', 'merus_R3'],['merus_R3', 'carpus_R3'],['carpus_R3', 'manus_R3'],['manus_R3', 'dactyl_R3'],
+            ['coxa_R4', 'merus_R4'],['merus_R4', 'carpus_R4'],['carpus_R4', 'manus_R4'],['manus_R4', 'dactyl_R4']
            ] # exludes paws for now!
 
 
